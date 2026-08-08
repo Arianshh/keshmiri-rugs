@@ -1,0 +1,27 @@
+{% load static %}
+<footer class="footer" id="contact">
+    <div>
+        <a class="logo" href="{% url 'home' %}">
+            <img
+                    src="{% static 'assets/logo.svg' %}"
+                    alt="Keshmiri Rugs"
+                    class="site-logo">
+        </a>
+
+        <p>Timeless. Authentic. Handwoven.</p>
+    </div>
+
+    <div>
+        <h4>Quick Links</h4>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'categories' %}">Categories</a>
+        <a href="{% url 'home' %}#why">Why Keshmiri Rugs</a>
+        <a href="{% url 'about' %}">About Us</a>
+    </div>
+
+    <div>
+        <h4>Contact Us</h4>
+        <p>WhatsApp: +98 912 869 2978</p>
+        <p>info@keshmirirugs.com</p>
+    </div>
+</footer>

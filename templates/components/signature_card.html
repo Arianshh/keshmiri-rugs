@@ -1,0 +1,33 @@
+<article class="card signature-card">
+
+    <div class="card-img">
+        {% if signature.cover_image %}
+            <img
+                src="{{ signature.cover_image.url }}"
+                alt="{{ signature.display_title }}">
+        {% else %}
+            <div class="card-placeholder">✦</div>
+        {% endif %}
+    </div>
+
+    <div class="card-body">
+        <h3>{{ signature.display_title }}</h3>
+    </div>
+
+    <div class="card-summary">
+        <small>Signature {{ signature.code }}</small>
+
+        <h3>{{ signature.display_title }}</h3>
+
+        {% if signature.short_description %}
+            <p>{{ signature.short_description }}</p>
+        {% endif %}
+
+        <a
+            class="btn gold"
+            href="{% url 'signature_detail' category.slug signature.id %}">
+            Open →
+        </a>
+    </div>
+
+</article>

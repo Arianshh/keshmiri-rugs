@@ -1,0 +1,53 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}Keshmiri Rugs{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'assets/style.css' %}">
+    {% block extra_css %}{% endblock %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+
+{% include "includes/topline.html" %}
+{% include "includes/navbar.html" %}
+
+{% block content %}{% endblock %}
+
+{% include "includes/footer.html" %}
+{% include "includes/whatsapp_float.html" %}
+
+{% block vendor_js %}
+<link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css">
+{% endblock %}
+
+<div class="rug-detail-modal" id="rugDetailModal">
+    <div class="rug-detail-overlay"></div>
+
+    <div class="rug-detail-box">
+
+        <button class="rug-detail-close">
+            ×
+        </button>
+
+        <h2 id="rugDetailTitle"></h2>
+
+        <div id="rugDetailContent"></div>
+
+    </div>
+
+</div>
+<script src="https://unpkg.com/photoswipe@5/dist/umd/photoswipe.umd.min.js"></script>
+<script src="{% static 'assets/script.js' %}"></script>
+{% block extra_js %}{% endblock %}
+
+</body>
+</html>

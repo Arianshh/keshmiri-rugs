@@ -1,0 +1,331 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Keshmiri Rugs | Authentic Persian Rugs{% endblock %}
+
+{% block content %}
+<section class="hero-v2">
+
+    <div class="hero-v2-image"></div>
+
+
+    <div class="hero-v2-overlay"></div>
+
+
+    <div class="hero-v2-content">
+
+
+        <span class="hero-v2-kicker">
+            Timeless Persian Rugs
+        </span>
+
+
+        <h1>
+            Centuries of Craftsmanship.
+            <br>
+            Curated for Today.
+        </h1>
+
+
+        <p>
+            Authentic handwoven Persian rugs,
+            selected from renowned weaving regions
+            and preserved for generations to come.
+        </p>
+
+
+        <a
+                class="hero-v2-button"
+                href="#collections">
+
+            Explore Collections →
+
+        </a>
+
+
+    </div>
+
+
+    <div class="hero-v2-scroll">
+        Scroll ↓
+    </div>
+
+</section>
+<!--<section class="heritage-strip">-->
+
+<!--    <div class="heritage-item">-->
+
+<!--        <strong>-->
+<!--            1959-->
+<!--        </strong>-->
+
+<!--        <span>-->
+<!--            Founded in Tabriz-->
+<!--        </span>-->
+
+<!--    </div>-->
+
+
+<!--    <div class="heritage-divider"></div>-->
+
+
+<!--    <div class="heritage-item">-->
+
+<!--        <strong>-->
+<!--            3-->
+<!--        </strong>-->
+
+<!--        <span>-->
+<!--            Generations of Expertise-->
+<!--        </span>-->
+
+<!--    </div>-->
+
+
+<!--    <div class="heritage-divider"></div>-->
+
+
+<!--    <div class="heritage-item">-->
+
+<!--        <strong>-->
+<!--            60+-->
+<!--        </strong>-->
+
+<!--        <span>-->
+<!--            Years of Persian Craftsmanship-->
+<!--        </span>-->
+
+<!--    </div>-->
+
+
+<!--    <div class="heritage-divider"></div>-->
+
+
+<!--    <div class="heritage-item">-->
+
+<!--        <strong>-->
+<!--            Worldwide-->
+<!--        </strong>-->
+
+<!--        <span>-->
+<!--            Collectors & Homes-->
+<!--        </span>-->
+
+<!--    </div>-->
+
+
+<!--</section>-->
+<section class="why-keshmiri" id="why-keshmiri">
+
+    <div class="section-title">
+
+        <span>WHY KESHMIRI</span>
+
+        <h2>
+            A piece of Persian history.
+        </h2>
+
+    </div>
+
+    <div class="why-tabs">
+
+        <button class="why-tab active" data-target="heritage">
+            <strong>1959</strong>
+            <span>Founded</span>
+        </button>
+
+        <button class="why-tab" data-target="generation">
+            <strong>Three</strong>
+            <span>Generations</span>
+        </button>
+
+        <button class="why-tab" data-target="authentic">
+            <strong>Authentic</strong>
+            <span>Handwoven</span>
+        </button>
+
+        <button class="why-tab" data-target="world">
+            <strong>Worldwide</strong>
+            <span>Delivery</span>
+        </button>
+
+    </div>
+
+    <div class="why-display">
+
+
+        <div class="why-content">
+
+            <h3 id="whyTitle">
+                Founded in Tabriz
+            </h3>
+
+            <p id="whyText">
+
+                Our family's journey began in 1959.
+                For more than six decades we've
+                carefully curated authentic Persian rugs,
+                building relationships with master
+                weavers throughout Iran.
+
+            </p>
+
+        </div>
+
+    </div>
+<!--    <section class="home-about-link">-->
+
+<!--        <div class="home-about-content">-->
+
+<!--        <span>-->
+<!--            Our Heritage-->
+<!--        </span>-->
+
+
+<!--            <h2>-->
+<!--                Keshmiri Rugs,-->
+<!--                <br>-->
+<!--                A Persian Legacy.-->
+<!--            </h2>-->
+
+
+<!--            <p>-->
+<!--                Discover the story behind Keshmiri Rugs,-->
+<!--                our generations of expertise,-->
+<!--                and the craftsmanship preserved in every piece.-->
+<!--            </p>-->
+
+
+<!--            <a href="{% url 'about' %}">-->
+<!--                Discover Our Story →-->
+<!--            </a>-->
+
+
+<!--        </div>-->
+
+<!--    </section>-->
+    <div class="home-collections-v2" id="collections">
+
+
+        <div class="home-collections-header">
+
+        <span>
+            Collections
+        </span>
+
+
+            <h2>
+                A Journey Through<br>
+                Persian History
+            </h2>
+
+
+            <p>
+                From refined city carpets to expressive tribal weavings,
+                discover collections shaped by centuries of Persian artistry.
+            </p>
+
+
+        </div>
+
+
+        <div class="home-category-grid">
+
+
+            {% for category in featured_categories %}
+
+
+            <a
+                    class="home-category-card-v2"
+                    href="{% url 'category_detail' category.slug %}">
+
+
+                {% if category.card_image %}
+
+                <img
+                        src="{{ category.card_image.url }}"
+                        alt="{{ category.name }}">
+
+
+                {% elif category.image %}
+
+                <img
+                        src="{{ category.image.url }}"
+                        alt="{{ category.name }}">
+
+
+                {% endif %}
+
+
+                <div class="home-category-info">
+
+
+                <span>
+                    Persian Collection
+                </span>
+
+
+                    <h3>
+                        {{ category.name }}
+                    </h3>
+
+                    <div>
+                        Explore →
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        <a
+                class="home-collections-link"
+                href="{% url 'categories' %}">
+
+            View All Collections →
+        </a>
+
+    </div>
+
+    </div>
+
+
+</section>
+
+<section class="luxury-cta">
+
+    <div class="luxury-cta-content">
+
+
+        <span>
+            Private Consultation
+        </span>
+
+
+        <h2>
+            Find the rug<br>
+            that belongs<br>
+            in your space.
+        </h2>
+
+
+        <p>
+            Receive expert guidance and discover
+            a Persian rug chosen around your style,
+            space, and preferences.
+        </p>
+
+
+        <button
+                class="luxury-cta-button"
+                data-wa
+                data-category="Persian Rugs">
+
+            Begin Private Consultation →
+
+        </button>
+
+
+    </div>
+
+
+</section>
+{% endblock %}

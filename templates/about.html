@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About Us | Keshmiri Rugs{% endblock %}
+
+{% block content %}
+<main class="about-deluxe" data-about-page>
+
+    <aside class="about-progress" aria-label="About page chapters">
+        <button class="about-progress-dot is-active" type="button" data-scroll-to="about-arrival" aria-label="Go to chapter 1"><span>01</span></button>
+        <button class="about-progress-dot" type="button" data-scroll-to="about-heritage" aria-label="Go to chapter 2"><span>02</span></button>
+        <button class="about-progress-dot" type="button" data-scroll-to="about-generations" aria-label="Go to chapter 3"><span>03</span></button>
+        <button class="about-progress-dot" type="button" data-scroll-to="about-philosophy" aria-label="Go to chapter 4"><span>04</span></button>
+        <button class="about-progress-dot" type="button" data-scroll-to="about-worldwide" aria-label="Go to chapter 5"><span>05</span></button>
+    </aside>
+
+    <section class="about-scene about-arrival is-dark" id="about-arrival" data-about-chapter="01">
+        <div class="about-arrival-pattern" aria-hidden="true"></div>
+        <div class="about-arrival-inner reveal-on-scroll">
+            <div class="about-kicker">Our Heritage</div>
+            <p class="about-year" aria-label="1959">1959</p>
+            <h1>Preserving a Legacy of Persian Craftsmanship</h1>
+            <button class="about-scroll-cue" type="button" data-scroll-to="about-heritage">
+                <span>Discover</span>
+                <i aria-hidden="true"></i>
+            </button>
+        </div>
+    </section>
+
+    <section class="about-scene about-heritage" id="about-heritage" data-about-chapter="02">
+        <div class="about-sticky-title" aria-hidden="true">
+            <span>Persian</span>
+            <strong>Heritage</strong>
+        </div>
+
+        <div class="about-reading-flow">
+            <article class="about-reading-panel reveal-on-scroll">
+                <span class="about-reading-index">01</span>
+                <p>
+                    For centuries, Persian rugs have represented one of the world’s most
+                    distinguished traditions of artistry, craftsmanship, and cultural
+                    expression. Each rug reflects the creativity of its makers, the
+                    character of its region, and the heritage passed through generations
+                    of Persian artisans.
+                </p>
+            </article>
+
+            <article class="about-reading-panel reveal-on-scroll">
+                <span class="about-reading-index">02</span>
+                <p>
+                    With roots in Persian rug craftsmanship dating back to 1959,
+                    Keshmiri Rugs continues a tradition of expertise established through
+                    Farsh Bastani, a historic rug house founded in Tabriz, one of Persia’s
+                    most celebrated weaving centers.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section class="about-scene about-generations is-dark" id="about-generations" data-about-chapter="03">
+        <div class="about-generations-pattern" aria-hidden="true"></div>
+        <div class="about-generations-layout">
+            <header class="about-generations-heading reveal-on-scroll">
+                <span>Three</span>
+                <strong>Generations</strong>
+            </header>
+
+            <div class="about-generations-copy reveal-on-scroll">
+                <p>
+                    Through generations of experience in weaving, trading, and
+                    international rug commerce, we have developed a deep understanding
+                    of the artistry, materials, and techniques behind exceptional
+                    Persian rugs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-scene about-philosophy" id="about-philosophy" data-about-chapter="04">
+        <div class="about-section-heading reveal-on-scroll">
+            <span>Our Approach</span>
+            <h2>Craftsmanship, authenticity and knowledge.</h2>
+        </div>
+
+        <div class="about-interactive" data-about-tabs>
+            <div class="about-tab-list" role="tablist" aria-label="Our approach">
+                <button class="about-tab is-active" type="button" role="tab" aria-selected="true" data-about-tab="curated">
+                    <span>01</span>
+                    <strong>Carefully Curated</strong>
+                </button>
+                <button class="about-tab" type="button" role="tab" aria-selected="false" data-about-tab="authenticity">
+                    <span>02</span>
+                    <strong>Authenticity and Knowledge</strong>
+                </button>
+                <button class="about-tab" type="button" role="tab" aria-selected="false" data-about-tab="identity">
+                    <span>03</span>
+                    <strong>Every rug has its own identity</strong>
+                </button>
+                <button class="about-tab" type="button" role="tab" aria-selected="false" data-about-tab="guidance">
+                    <span>04</span>
+                    <strong>Our expertise</strong>
+                </button>
+            </div>
+
+            <div class="about-tab-stage" aria-live="polite">
+                <span class="about-tab-stage-number" id="aboutStageNumber">01</span>
+                <h3 id="aboutStageTitle">Carefully Curated</h3>
+                <div class="about-tab-copy" id="aboutStageCopy">
+                    <p>
+                        Today, Keshmiri Rugs carefully curates handwoven pieces from
+                        across Persia, working directly with skilled weavers, trusted
+                        workshops, and established collectors.
+                    </p>
+                    <p>
+                        Our collection includes antique, semi-antique, and contemporary
+                        rugs, selected for their craftsmanship, materials, design,
+                        condition, and cultural significance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-scene about-worldwide is-dark" id="about-worldwide" data-about-chapter="05">
+        <div class="about-worldwide-intro reveal-on-scroll">
+            <div class="about-kicker">A Curated Experience</div>
+            <h2>For Collectors Worldwide</h2>
+        </div>
+
+        <div class="about-worldwide-interactive" data-worldwide-tabs>
+            <div class="about-worldwide-nav" role="tablist" aria-label="Collector services">
+                <button class="about-worldwide-tab is-active" type="button" role="tab" aria-selected="true" data-worldwide-tab="certificate">Certificate</button>
+                <button class="about-worldwide-tab" type="button" role="tab" aria-selected="false" data-worldwide-tab="consultation">Consultation</button>
+                <button class="about-worldwide-tab" type="button" role="tab" aria-selected="false" data-worldwide-tab="appointments">Video Appointments</button>
+                <button class="about-worldwide-tab" type="button" role="tab" aria-selected="false" data-worldwide-tab="shipping">Worldwide Shipping</button>
+            </div>
+
+            <div class="about-worldwide-stage" aria-live="polite">
+                <p id="worldwideStageCopy">
+                    To provide confidence and transparency, each rug is accompanied
+                    by a certificate of authenticity detailing its origin,
+                    materials, craftsmanship, and other important characteristics.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-scene about-final-quote is-dark" id="about-final">
+        <div class="about-final-pattern" aria-hidden="true"></div>
+        <blockquote class="reveal-on-scroll">
+            More than a rug — a living expression of Persian artistry and heritage.
+        </blockquote>
+    </section>
+
+    <div class="about-source-content" hidden aria-hidden="true">
+        <div id="about-copy-authenticity">
+            <p>
+                Every rug has its own identity — from the natural materials and
+                traditional techniques used to create it, to the stories and
+                regional influences woven into its design.
+            </p>
+        </div>
+        <div id="about-copy-identity">
+            <p>
+                Every rug has its own identity — from the natural materials and
+                traditional techniques used to create it, to the stories and
+                regional influences woven into its design.
+            </p>
+        </div>
+        <div id="about-copy-guidance">
+            <p>
+                Our expertise allows us to guide customers in discovering pieces
+                that complement their spaces while preserving the authenticity
+                of Persian craftsmanship.
+            </p>
+        </div>
+        <div id="about-copy-worldwide">
+            <p>
+                Through personalized consultations, private video appointments,
+                and worldwide shipping, Keshmiri Rugs brings the beauty and
+                heritage of Persian rugs closer to collectors, designers, and
+                homes around the world.
+            </p>
+        </div>
+    </div>
+</main>
+
+<script src="{% static 'js/about-interactive.js' %}" defer></script>
+{% endblock %}

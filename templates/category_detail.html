@@ -1,0 +1,404 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category.name }} | Keshmiri Rugs{% endblock %}
+
+
+{% block content %}
+
+
+<main class="cat-content">
+
+
+    <section class="category-hero-v2">
+
+
+        {% if category.image %}
+
+        <div class="category-hero-v2-image">
+
+            <img
+                    src="{{ category.image.url }}"
+                    alt="{{ category.name }}">
+
+        </div>
+
+        {% endif %}
+
+
+        <div class="category-hero-v2-overlay">
+
+
+        <span class="category-kicker">
+            Persian Collection
+        </span>
+
+
+            <h1>
+                {{ category.name }}
+            </h1>
+
+
+            <div class="category-actions">
+
+
+                <button
+                        class="btn gold"
+                        data-description-open="categoryDescriptionModal">
+
+                    Discover Story →
+
+                </button>
+
+
+                <a href="#rugs" class="category-scroll">
+                    Explore Rugs ↓
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+    <section class="category-information-v2">
+
+
+        <div class="category-info-intro">
+
+            <h2>
+                About {{ category.name }}
+            </h2>
+
+
+            <p>
+                {{ category.description }}
+            </p>
+
+
+        </div>
+
+
+        <div class="category-info-buttons">
+
+
+            <button
+                    class="btn gold"
+                    data-info-open="designCharacterModal">
+
+                ✦ Design Character
+
+            </button>
+
+
+            <button
+                    class="btn gold"
+                    data-info-open="whyChooseModal">
+
+                ✦ Why Choose It?
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+    <!-- RUG COLLECTION -->
+
+    <section class="rug-collection-section" id="rugs">
+
+        <div class="signature-collection-head">
+
+
+<!--            <h2 class="item-detail">-->
+<!--                Available Rugs-->
+<!--            </h2>-->
+
+
+            <p class="item-description">
+
+                Explore our curated selection from the
+                <strong>{{ category.name }}</strong>
+                collection.
+
+            </p>
+
+
+        </div>
+
+
+        {% if rugs %}
+
+
+        <div class="rug-grid">
+
+
+            {% for rug in rugs %}
+
+
+            {% include "components/rug_card.html" with rug=rug %}
+
+
+            {% endfor %}
+
+
+        </div>
+
+
+        {% if rugs.paginator.num_pages > 1 %}
+
+
+        <nav class="collection-pagination">
+
+
+            <div class="pagination-controls">
+
+
+                {% if rugs.has_previous %}
+
+                <a
+                        class="pagination-nav"
+                        href="?page={{ rugs.previous_page_number }}">
+
+                    ← Previous
+
+                </a>
+
+
+                {% else %}
+
+
+                <span class="pagination-nav pagination-disabled">
+
+                    ← Previous
+
+                </span>
+
+
+                {% endif %}
+
+
+                <div class="pagination-pages">
+
+
+                    {% for page_number in rugs.paginator.page_range %}
+
+
+                    {% if page_number == rugs.number %}
+
+
+                    <span class="pagination-page pagination-current">
+
+                        {{ page_number }}
+
+                    </span>
+
+
+                    {% else %}
+
+
+                    <a
+                            class="pagination-page"
+                            href="?page={{ page_number }}">
+
+                        {{ page_number }}
+
+                    </a>
+
+
+                    {% endif %}
+
+
+                    {% endfor %}
+
+
+                </div>
+
+
+                {% if rugs.has_next %}
+
+
+                <a
+                        class="pagination-nav"
+                        href="?page={{ rugs.next_page_number }}">
+
+                    Next →
+
+                </a>
+
+
+                {% else %}
+
+
+                <span class="pagination-nav pagination-disabled">
+
+                    Next →
+
+                </span>
+
+
+                {% endif %}
+
+
+            </div>
+
+
+            <p class="pagination-status">
+
+                Page {{ rugs.number }}
+                of {{ rugs.paginator.num_pages }}
+
+            </p>
+
+
+        </nav>
+
+
+        {% endif %}
+
+
+        {% else %}
+
+
+        <p class="lead">
+
+            No rugs have been added yet.
+
+        </p>
+
+
+        {% endif %}
+
+
+    </section>
+
+
+</main>
+
+
+<!-- DESIGN CHARACTER POPUP -->
+
+
+<div class="info-modal" id="designCharacterModal">
+
+
+    <div class="info-modal-box">
+
+
+        <button class="info-modal-close">
+            ×
+        </button>
+
+
+        <h2>
+            Design Character
+        </h2>
+
+
+        <ul>
+
+
+            {% for feature in category.design_character_list %}
+
+            <li>
+                {{ feature }}
+            </li>
+
+
+            {% empty %}
+
+
+            <li>
+                Authentic Persian craftsmanship
+            </li>
+
+
+            {% endfor %}
+
+
+        </ul>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- WHY CHOOSE POPUP -->
+
+
+<div class="info-modal" id="whyChooseModal">
+
+
+    <div class="info-modal-box">
+
+
+        <button class="info-modal-close">
+            ×
+        </button>
+
+
+        <h2>
+            Why Choose It?
+        </h2>
+
+
+        <p>
+
+
+            {% if category.why_choose %}
+
+
+            {{ category.why_choose }}
+
+
+            {% else %}
+
+
+            A beautiful choice for collectors,
+            interior designers and homeowners looking
+            for authentic craftsmanship, visual warmth
+            and cultural identity.
+
+
+            {% endif %}
+
+
+        </p>
+
+
+    </div>
+
+
+</div>
+<div class="info-modal" id="categoryDescriptionModal">
+
+
+    <div class="info-modal-box">
+
+
+        <button class="info-modal-close">
+            ×
+        </button>
+
+
+        <h2>
+            About {{ category.name }}
+        </h2>
+
+
+        <p>
+            {{ category.description }}
+        </p>
+
+
+    </div>
+
+
+</div>
+
+{% endblock %}

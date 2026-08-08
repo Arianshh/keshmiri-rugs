@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Rug Collections | Keshmiri Rugs{% endblock %}
+
+{% block content %}
+
+<main class="collections-v2">
+
+
+    <section class="collections-v2-hero">
+
+        <div class="collections-v2-mark">
+            <img
+                    src="{% static 'assets/logo-minimal.svg' %}"
+                    alt="Keshmiri Rugs">
+        </div>
+
+
+        <div class="collections-v2-content">
+
+        <span class="collections-kicker">
+            Collections
+        </span>
+
+
+            <h1>
+                Rooted In Tradition<br>
+                Curated For Today
+            </h1>
+
+
+            <p>
+                Explore collections shaped by centuries of tradition,
+                where every rug reflects the artistry, materials,
+                and cultural heritage of its origin.
+            </p>
+
+
+        </div>
+
+
+        <div class="collections-scroll">
+            Available Collections ↓
+        </div>
+
+
+    </section>
+
+
+    <section class="collections-gallery">
+
+
+        {% for category in categories %}
+
+
+        {% include "components/category_card.html" with category=category %}
+
+
+        {% empty %}
+
+
+        <p class="lead">
+            No categories have been added yet.
+        </p>
+
+
+        {% endfor %}
+
+
+    </section>
+
+
+    <section class="collections-ending">
+
+
+<span>
+    Keshmiri Rugs
+</span>
+
+
+        <h2>
+            Discover a piece of Persian heritage.
+        </h2>
+
+
+        <a href="{% url 'home' %}#contact">
+            Begin Your Consultation →
+        </a>
+
+
+    </section>
+
+
+</main>
+
+
+{% endblock %}

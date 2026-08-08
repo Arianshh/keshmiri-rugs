@@ -1,0 +1,113 @@
+<article class="rug-card-v2">
+
+
+    <div
+            class="rug-card-v2-image"
+            {% if rug.image %}
+            data-rug-gallery
+            data-main-image="{{ rug.image.url }}"
+            data-main-title="{{ rug.name }}"
+            {% if rug.detail_image %}
+            data-detail-image="{{ rug.detail_image.url }}"
+            data-detail-title="{{ rug.name }} Detail"
+            {% endif %}
+            {% endif %}
+    >
+
+
+        {% if rug.image %}
+
+
+        <img
+                src="{% if rug.card_image %}{{ rug.card_image.url }}{% else %}{{ rug.image.url }}{% endif %}"
+                alt="{{ rug.name }}"
+        >
+
+
+        <div class="rug-card-v2-overlay">
+
+            <span>
+                View Gallery
+            </span>
+
+            <i>
+                +
+            </i>
+
+        </div>
+
+
+        {% else %}
+
+
+        <div class="rug-card-v2-placeholder">
+            ✦
+        </div>
+
+
+        {% endif %}
+
+
+    </div>
+
+
+    <div class="rug-card-v2-content">
+
+
+        <span class="rug-card-v2-type">
+            Persian Rug
+        </span>
+
+
+        <h3>
+            {{ rug.name }}
+        </h3>
+
+
+<!--        {% if rug.signature %}-->
+
+<!--        <p class="rug-card-v2-signature">-->
+
+<!--            Signature:-->
+
+<!--            <a href="{% url 'signature_detail' rug.signature.category.slug rug.signature.id %}">-->
+
+<!--                {{ rug.signature.display_title }}-->
+
+<!--            </a>-->
+
+<!--        </p>-->
+
+<!--        {% endif %}-->
+
+
+        <button
+                type="button"
+                class="rug-card-v2-link"
+                data-rug-detail-open
+
+                data-rug-name="{{ rug.name }}"
+
+                data-rug-description="{% if rug.detail_description %}{{ rug.detail_description|escapejs }}{% endif %}"
+
+                data-rug-dimension="{% if rug.dimension %}{{ rug.dimension }}{% endif %}"
+
+                data-rug-warp="{% if rug.warp %}{{ rug.warp }}{% endif %}"
+
+                data-rug-pile="{% if rug.pile %}{{ rug.pile }}{% endif %}"
+
+                data-rug-price="{% if rug.price %}{{ rug.price }}{% endif %}"
+
+                data-rug-available="{{ rug.is_available }}"
+        >
+
+            View Details
+            <span>→</span>
+
+        </button>
+
+
+    </div>
+
+
+</article>

@@ -1,0 +1,52 @@
+<article class="collection-card">
+
+
+    <a href="{% url 'category_detail' category.slug %}">
+
+
+        <div class="collection-card-image">
+
+
+            {% if category.card_image %}
+
+            <img src="{{ category.card_image.url }}"
+                 alt="{{ category.name }}">
+
+
+            {% elif category.image %}
+
+            <img src="{{ category.image.url }}"
+                 alt="{{ category.name }}">
+
+
+            {% endif %}
+
+
+        </div>
+
+
+        <div class="collection-card-info">
+
+
+            <span class="collection-type">
+                Persian Collection
+            </span>
+
+
+            <h2>
+                {{ category.name|cut:" Rugs" }}
+            </h2>
+
+
+            <span class="collection-action">
+                Explore Collection →
+            </span>
+
+
+        </div>
+
+
+    </a>
+
+
+</article>

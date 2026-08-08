@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}{{ signature.code }} | {{ category.name }} | Keshmiri Rugs{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css">
+{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <div class="breadcrumb">
+            <a href="{% url 'home' %}">Home</a> /
+            <a href="{% url 'categories' %}">Categories</a> /
+            <a href="{% url 'category_detail' category.slug %}">
+                {{ category.name }}
+            </a>
+        </div>
+
+        <h1>{{ signature.display_title }}</h1>
+
+        <p>
+            {{ category.name }} · Signature {{ signature.code }}
+        </p>
+    </div>
+</section>
+
+<main class="cat-content">
+    <section class="story">
+        <h2>Rugs</h2>
+
+        {% if signature.short_description %}
+            <p>{{ signature.short_description }}</p>
+        {% endif %}
+
+        {% if rugs %}
+            <div class="rug-grid">
+                {% for rug in rugs %}
+                    {% include "components/rug_card.html" with rug=rug %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No rugs have been added to this signature yet.</p>
+        {% endif %}
+    </section>
+</main>
+{% endblock %}
+
+{% block vendor_js %}
+<script src="https://unpkg.com/photoswipe@5/dist/umd/photoswipe.umd.min.js"></script>
+{% endblock %}
