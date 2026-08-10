@@ -4445,6 +4445,8 @@ h2 {
 .collection-card-info {
 
     padding-top: 25px;
+    text-align: center;
+
 
 }
 
@@ -4560,4 +4562,75 @@ h2 {
 
     letter-spacing: .08em;
 
+}
+
+/* Center Collections hero content */
+
+.collections-v2-hero {
+    align-items: center;
+    text-align: center;
+}
+
+.collections-v2-content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.collections-v2-content p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.collections-v2-mark {
+    display: flex;
+    justify-content: center;
+}
+
+.category-info-intro p {
+    max-height: 260px;
+    overflow-y: auto;
+    padding-right: 14px;
+    margin-left: auto;
+    margin-right: auto;
+
+    scrollbar-width: thin;
+    scrollbar-color: #A35846 transparent;
+}
+
+.category-info-intro p::-webkit-scrollbar {
+    width: 6px;
+}
+
+.category-info-intro p::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.category-info-intro p::-webkit-scrollbar-thumb {
+    background: #A35846;
+    border-radius: 10px;
+}
+
+.home-collections-header {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.home-collections-header p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.home-category-grid {
+    justify-content: center;
+}
+
+.home-category-info {
+    text-align: center;
 }
